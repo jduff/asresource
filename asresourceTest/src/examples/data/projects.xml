@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projects type="array">
+  <project>
+    <created-at type="datetime">2009-01-15T17:14:27Z</created-at>
+    <id type="integer">1</id>
+    <name>the project</name>
+    <updated-at type="datetime">2009-01-15T17:14:27Z</updated-at>
+  </project>
+  <project>
+    <created-at type="datetime">2009-01-15T17:14:27Z</created-at>
+    <id type="integer">2</id>
+    <name>another project</name>
+    <updated-at type="datetime">2009-01-15T17:14:27Z</updated-at>
+  </project>
+  <project>
+    <created-at type="datetime">2009-01-15T17:14:27Z</created-at>
+    <id type="integer">3</id>
+    <name>project 3</name>
+    <updated-at type="datetime">2009-01-15T17:14:27Z</updated-at>
+  </project>
+  <project>
+    <created-at type="datetime">2009-01-15T17:14:27Z</created-at>
+    <id type="integer">4</id>
+    <name>a name</name>
+    <updated-at type="datetime">2009-01-15T17:14:27Z</updated-at>
+  </project>
+</projects>

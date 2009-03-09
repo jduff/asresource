@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<flexLibProperties version="1">
+<includeClasses>
+<classEntry path="com.asresource.base.Controller"/>
+<classEntry path="com.asresource.base.IService"/>
+<classEntry path="com.asresource.base.Resource"/>
+<classEntry path="com.asresource.base.SimpleResponder"/>
+<classEntry path="com.asresource.base.XMLHandler"/>
+<classEntry path="com.asresource.base.XMLService"/>
+<classEntry path="com.asresource.mocks.MockXMLService"/>
+<classEntry path="com.utils.Inflector"/>
+<classEntry path="com.utils.Metadata"/>
+<classEntry path="com.utils.Util"/>
+</includeClasses>
+<includeResources/>
+<namespaceManifests/>
+</flexLibProperties>

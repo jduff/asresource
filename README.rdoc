@@ -1,0 +1,26 @@
+= asresource: A simple RESTful framework similar to Rails' ActiveResource for Actionscript 3
+
+== Description
+
+* Built specifically for use with a Rails backend (so you don't need to do anything special to the Rails server)
+* Simple and straight forward to use
+
+== Current State
+
+* Show action is working and tested, maps the result back to the object.
+* mock xml service is setup so tests can be run against local data
+* other actions are incomplete, but should be straight forward to implement based on the current state.
+    
+== Acknowledgments
+
+This work was greatly inspired by the RestfulX framework by Dima Berastau (http://github.com/dima/restfulx/tree/master)
+
+If you're looking for something that is a bit more complete and featureful I would defiantly check that out.
+
+== TODO
+* finish the mocked out sections
+* lots more tests are needed
+    
+== License
+
+Copyright (c) 2009 John Duff, released under MIT License

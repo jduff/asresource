@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:WindowedApplication xmlns:mx="http://www.adobe.com/2006/mxml" layout="absolute" xmlns="*" xmlns:flexunit="flexunit.flexui.*" 
+	creationComplete="onCreationComplete()" height="518" width="973" xmlns:defusion="org.defusion.flexunit.*">
+				
+	<mx:Script>
+		<![CDATA[
+			import flexunit.framework.TestFailure;
+			import com.asresource.mocks.MockXMLService;
+			import test.utils.MetadataTest;
+			import com.asresource.base.Controller;
+			import test.asresource.example.ProjectTest;
+			import flexunit.framework.TestSuite;
+			
+			// Create the test suite and run the tests
+			private function onCreationComplete():void
+			{
+				init();
+				
+  				testRunner.test = createSuite();
+  				testRunner.startTest();
+  			}
+  			
+  			private function init():void {
+  				var testData:Object = {projects: projects};
+  				
+  				Controller.initialize("http://localhost:3000/", MockXMLService);
+  				MockXMLService(Controller.inst.service).loadData(testData);
+  			}
+			
+			// Creates the test suite to run
+			private function createSuite():TestSuite {
+  				var testSuite:TestSuite = new TestSuite();
+  				
+  				testSuite.addTestSuite( ProjectTest );
+  				testSuite.addTestSuite( MetadataTest );
+  				
+  				return testSuite;
+  			}	
+
+		]]>
+	</mx:Script>
+	
+	<mx:XML id="projects" source="examples/data/projects.xml"/>
+
+<defusion:FlexUnitRunner id="testRunner" width="100%" height="100%" />
+
+	<!-- FlexUnit GUI Component 
+	<flexunit:TestRunnerBase id="testRunner" right="15" left="10" top="10" bottom="18" /> -->
+</mx:WindowedApplication>
