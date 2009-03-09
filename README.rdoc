@@ -7,6 +7,7 @@
 
 == Current State
 
+* *incomplete*
 * Show action is working and tested, maps the result back to the object.
 * mock xml service is setup so tests can be run against local data
 * other actions are incomplete, but should be straight forward to implement based on the current state.
