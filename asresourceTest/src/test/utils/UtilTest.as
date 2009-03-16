@@ -20,11 +20,15 @@ package test.utils
 		}
 		
 		public function testUrlForWithoutObjectId():void {
-			var project:Project = new Project();
-			assertEquals("projects.xml", Util.urlFor(project));
+			assertEquals("projects.xml", Util.urlFor(new Project()));
 			
-			var user:User = new User();
-			assertEquals("users.xml", Util.urlFor(user));
+			assertEquals("users.xml", Util.urlFor(new User()));
+		}
+		
+		public function testUrlForWithClass():void {
+			assertEquals("projects.xml", Util.urlFor(Project));
+			
+			assertEquals("users.xml", Util.urlFor(User));
 		}
 
 	}

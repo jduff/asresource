@@ -4,6 +4,7 @@
 				
 	<mx:Script>
 		<![CDATA[
+			import test.asresource.base.ResourceTest;
 			import test.utils.UtilTest;
 			import flexunit.framework.TestFailure;
 			import com.asresource.mocks.MockXMLService;
@@ -34,6 +35,7 @@
   				
   				testSuite.addTestSuite( ProjectTest );
   				testSuite.addTestSuite( MetadataTest );
+  				testSuite.addTestSuite( ResourceTest );
   				testSuite.addTestSuite( UtilTest );
   				
   				return testSuite;

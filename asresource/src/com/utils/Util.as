@@ -8,8 +8,8 @@ package com.utils
 		{
 		}
 		
-		public static function urlFor(object:Resource):String {
-			var url:String = object.meta.classNamePluralized;
+		public static function urlFor(object:Object):String {
+			var url:String = Metadata.getMeta(object).classNamePluralized;
 			if(object.id != null)
 				url = url + "/" + object.id;
 			return url + ".xml";

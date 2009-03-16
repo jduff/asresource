@@ -1,5 +1,7 @@
 package test.utils
 {
+	import com.asresource.base.Controller;
+	import com.asresource.base.Resource;
 	import com.utils.Metadata;
 	
 	import examples.Project;
@@ -17,6 +19,17 @@ package test.utils
 			
 			assertEquals(data.className, "project");
 			assertEquals(data.classNamePluralized, "projects");
+			assertTrue(data.extendsClass("Resource"));
+		}
+		
+		public function testProjectClassMetadata():void
+		{
+			var data:Metadata = new Metadata(Project);
+			
+			assertTrue(data.variables.indexOf("name")!=-1);
+			assertEquals(data.classNamePluralized, "projects");
+			assertTrue(data.extendsClass("Resource"));
+			assertTrue(!data.extendsClass("Test"));
 		}
 	}
 }

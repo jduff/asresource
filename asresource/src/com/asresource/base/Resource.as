@@ -2,6 +2,8 @@ package com.asresource.base
 {
 	import com.utils.Metadata;
 	
+	import flash.utils.describeType;
+	
 	public class Resource
 	{
 		private var _metadata:Metadata;
@@ -26,15 +28,11 @@ package com.asresource.base
 			Controller.inst.service.show(this, onSuccess, onFailure);
 		}
 		
-		public static function list(resource:Resource):void {}
-		
-		public static function invoke(resource:Resource, path:String, params:Object):void {
+		public static function list(obj:Class, onSuccess:Function=null, onFailure:Function=null):void {
+			return Controller.inst.service.list(obj, onSuccess, onFailure);
 		}
 		
-		public function get meta():Metadata {
-			if(_metadata==null)
-				_metadata = new Metadata(this);
-			return _metadata;
+		public static function invoke(resource:Resource, path:String, params:Object):void {
 		}
 
 	}

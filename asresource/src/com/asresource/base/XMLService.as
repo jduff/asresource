@@ -25,9 +25,12 @@ package com.asresource.base
 		public function destroy():void{}
 		
 		public function invoke():void{}
+		public function list(object:Class, onSuccess:Function=null, onFailure:Function=null):void{
+			var service:HTTPService = getHTTPService(object, URLRequestMethod.GET);
+		}
 		
 		
-		protected function getHTTPService(object:Resource, method:String):HTTPService {
+		protected function getHTTPService(object:Object, method:String):HTTPService {
 			var httpService:HTTPService = new HTTPService();
 			httpService.addEventListener(ResultEvent.RESULT, onHttpResult);
 			

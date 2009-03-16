@@ -1,8 +1,12 @@
 package test.asresource.example
 {	
+	import com.asresource.base.Resource;
+	
 	import examples.Project;
 	
 	import flexunit.framework.TestCase;
+	
+	import mx.controls.advancedDataGridClasses.SortInfo;
 	
 	public class ProjectTest extends TestCase
 	{
@@ -27,6 +31,21 @@ package test.asresource.example
 			
 			// make sure adding a property that is not in the xml doesn't break the parsing
 			assertEquals("expecting nothing be returned since it's not in the xml", null, project.local_variable);
+		}
+		
+		public function testListingProjects():void {
+			Resource.list(Project, function(projects:Array):void {
+				assertEquals(4, projects.length);
+				
+				var project:Project = projects.shift();
+				assertEquals("1", project.id);
+				assertEquals("the project", project.name);
+				
+				project = projects.shift();
+				assertEquals("2", project.id);
+				assertEquals("another project", project.name);
+				
+			});
 			
 		}
 		
