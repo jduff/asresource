@@ -1,12 +1,7 @@
 package com.asresource.base
-{
-	import com.utils.Metadata;
-	
-	import flash.utils.describeType;
-	
+{	
 	public class Resource
 	{
-		private var _metadata:Metadata;
 		private var _isReady:Boolean = false;
 		
 		public var id:String;

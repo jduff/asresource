@@ -18,8 +18,6 @@ package com.asresource.base
 			token.addResponder(new SimpleResponder(object, onSuccess, onFailure));
 		}
 		
-		
-		
 		public function create():void{}
 		public function update():void{}
 		public function destroy():void{}
@@ -27,6 +25,9 @@ package com.asresource.base
 		public function invoke():void{}
 		public function list(object:Class, onSuccess:Function=null, onFailure:Function=null):void{
 			var service:HTTPService = getHTTPService(object, URLRequestMethod.GET);
+			
+			var token:AsyncToken = service.send();
+			token.addResponder(new SimpleResponder(object, onSuccess, onFailure));
 		}
 		
 		

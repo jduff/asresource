@@ -12,7 +12,7 @@ package test.utils
 	{
 		public function testProjectMetadata():void
 		{
-			var data:Metadata = new Metadata(new Project());
+			var data:Metadata = Metadata.getMeta(new Project());
 			
 			assertTrue(data.variables.indexOf("name")!=-1);
 			assertTrue(data.variables.indexOf("id")!=-1);
@@ -24,7 +24,7 @@ package test.utils
 		
 		public function testProjectClassMetadata():void
 		{
-			var data:Metadata = new Metadata(Project);
+			var data:Metadata = Metadata.getMeta(Project);
 			
 			assertTrue(data.variables.indexOf("name")!=-1);
 			assertEquals(data.classNamePluralized, "projects");
