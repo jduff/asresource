@@ -6,8 +6,6 @@ package test.asresource.example
 	
 	import flexunit.framework.TestCase;
 	
-	import mx.controls.advancedDataGridClasses.SortInfo;
-	
 	public class ProjectTest extends TestCase
 	{
 		
@@ -47,6 +45,16 @@ package test.asresource.example
 				
 			});
 			
+		}
+		
+		public function testSavingProject():void {
+			var project:Project = new Project();
+			project.name = "saved project";
+			project.save(function(result:Project):void{
+				assertEquals("5", project.id);
+				assertEquals("saved project", project.name);
+				assertEquals("", project.created_at);
+			});
 		}
 		
 	}

@@ -35,8 +35,9 @@
   				
   				testSuite.addTestSuite( ProjectTest );
   				testSuite.addTestSuite( MetadataTest );
-  				testSuite.addTestSuite( ResourceTest );
   				testSuite.addTestSuite( UtilTest );
+  				
+  				// testSuite.addTestSuite( ResourceTest );
   				
   				return testSuite;
   			}	
