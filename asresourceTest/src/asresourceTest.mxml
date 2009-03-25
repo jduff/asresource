@@ -4,6 +4,7 @@
 				
 	<mx:Script>
 		<![CDATA[
+			import test.asresource.base.ControllerTest;
 			import test.asresource.base.ResourceTest;
 			import test.utils.UtilTest;
 			import flexunit.framework.TestFailure;
@@ -36,6 +37,7 @@
   				testSuite.addTestSuite( ProjectTest );
   				testSuite.addTestSuite( MetadataTest );
   				testSuite.addTestSuite( UtilTest );
+  				testSuite.addTestSuite( ControllerTest );
   				
   				// testSuite.addTestSuite( ResourceTest );
   				

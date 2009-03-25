@@ -7,6 +7,9 @@ package com.asresource.base
 		
 		private var _service:IService;
 		
+		private var _username:String;
+		private var _password:String;
+		
 		private static var _instance:Controller = null;
 		
 		public function Controller(enforcer:SingletonEnforcer, url:String, service:IService) {
@@ -14,7 +17,7 @@ package com.asresource.base
 			_service = service;
 		}
 		
-		public static function initialize(url:String="http://localhost:3000/", serviceProvider:Class=null):void {
+		public static function initialize(url:String="localhost:3000/", serviceProvider:Class=null):void {
 			if(serviceProvider == null)
 				serviceProvider = XMLService;
 			_instance = new Controller(new SingletonEnforcer, url, new serviceProvider());
@@ -26,11 +29,19 @@ package com.asresource.base
 		}
 		
 		public function get base_url():String {
-			return _base_url;
+			var url:String = "http://";
+			if(_username != null && _password != null)
+				url += _username + ":" + _password + "@";
+			return url + _base_url.replace("http://", "");
 		}
 		
 		public function get service():IService {
 			return _service;
+		}
+		
+		public function basicAuth(username:String=null, password:String=null):void {
+			_username = username;
+			_password = password;
 		}
 
 	}
